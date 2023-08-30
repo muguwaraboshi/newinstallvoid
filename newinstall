@@ -1,0 +1,30 @@
+||VOID||
+
+
+[install system program]
+sudo xbps-install base-devel libX11-devel libXft-devel libXinerama-devel freetype-deve
+l fontconfig-devel xorg git kitty fish-shell neovim picom
+
+[install dk]   
+sudo xbps-install -S libxcb-devel xcb-proto xcb-util-devel xcb-util-wm-devel xcb-util-
+cursor-devel xcb-util-keysyms-devel
+git clone https://bitbucket.org/natemaia/dk.git
+make
+make install
+/usr/local/share/doc/dk
+
+[install nix]
+sudo xbps-install -S nix
+sudo ln -s /etc/sv/nix-daemon /var/service
+nix-channel --add http://nixos.org/channels/nixpkgs-unstable
+nix-channel --update
+ln -s /home/$USER/.nix-profile/share/applications/* /home/$USER/.local/share/applications/
+nix-env qaP | grep .....
+nix-env -iA .....
+
+
+[mount usb]
+sudo xbps install -S elogind dbus gvfs udiskie
+sudo ln -s /etc/sv/{elogind,dbus} /var/service
+add dbus-run-session to xinitrc
+
