@@ -3,7 +3,7 @@
 
 [install system program]
 sudo xbps-install base-devel libX11-devel libXft-devel libXinerama-devel freetype-deve
-l fontconfig-devel xorg git kitty fish-shell neovim picom
+l fontconfig-devel xorg git kitty fish-shell neovim picom rofi feh alsa-utils
 
 [install dk]   
 sudo xbps-install -S libxcb-devel xcb-proto xcb-util-devel xcb-util-wm-devel xcb-util-
