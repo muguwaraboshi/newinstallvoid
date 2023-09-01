@@ -1,0 +1,77 @@
+super + shift + x
+	pkill -USR1 -x sxhkd
+
+super + shift + Escape
+	dkcmd exit
+
+super + shift + r
+	~/.config/dk/dkrc
+
+super + alt + shift + r
+	dkcmd restart
+
+super + {j,l}
+	dkcmd win focus {prev,next}
+
+super + {q,k,i}
+	dkcmd win {kill,swap,cycle}
+
+super + {f,v}
+	dkcmd win {full,float}  
+
+super + shift + {j,k,i,l}
+	dkcmd win resize {x=-20,y=+20,y=-20,x=+20}
+
+super + ctrl + {j,k,i,l}
+	dkcmd win resize {w=-20,h=+20,h=-20,w=+20}
+
+super + {up,down}
+	dkcmd win mvstack {up,down}
+
+super + {_,shift + ,ctrl + }{1-9,0}
+	dkcmd ws {view,send,follow} {1-9,0}
+
+super + {o,p}
+	dkcmd ws view {prevne,nextne}
+
+super + shift + {o,p}
+	dkcmd ws send {prev,next}
+
+super + ctrl + {o,p}
+	dkcmd ws follow {prev,next}
+
+super + {t,r,m,g,n,s}
+	dkcmd set layout {tile,retile,mono,grid,none,tstack}
+
+super + {minus,equal}
+	dkcmd set gap {-5,+5}
+
+super + ctrl + {minus,equal}
+	dkcmd set border {width}
+
+super + comma
+	amixer -q sset Master 5%-
+
+super + period
+	amixer -q sset Master 5%+
+
+super + alt + period
+	amixer -q sset Master toggle
+
+super + {F9,F10,F11}
+	gnome-screenshot {_,-w,-a}
+
+super + shift + {F9,F10,F11}
+	gnome-screenshot {_ -c,-wc,-ac}
+
+super + alt + Return
+	kitty
+
+super + alt + r
+	rofi -show drun
+
+super + shift + F5
+	pkill dk
+
+super + shift + {F6,F7,F8}
+	loginctl {suspend,reboot,poweroff}
